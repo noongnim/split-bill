@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#176c50"><title>같이정산 · 메뉴별로 공평하게</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><a class="brand" href="./">◒ 같이정산</a><span class="badge">로그인 없이 간편하게</span></header>
+<main>
+<section class="intro"><div class="eyebrow">먹은 만큼, 함께 나누기</div><h1>함께 먹고,<br>깔끔하게 정산해요.</h1><p>커피는 각자, 디저트는 함께.<br>메뉴마다 함께한 사람을 골라 주세요.</p><div class="privacy">내역은 이 브라우저에 자동 저장돼요</div></section>
+<div class="layout"><div class="editor">
+<section class="card"><div class="section-title"><h2><span class="step">1</span> 누구와 함께했나요?</h2><span id="people-count" class="muted"></span></div><form id="person-form" class="inline"><label class="sr-only" for="person-name">참여자 이름</label><input id="person-name" maxlength="20" placeholder="이름 입력 (예: 지민)" required autocomplete="off"><button type="submit">추가</button></form><div id="people" class="chips"></div><p id="people-empty" class="hint">나를 포함해 정산할 사람을 추가해 주세요.</p></section>
+<section class="card"><div class="section-title"><h2><span class="step">2</span> 무엇을 먹었나요?</h2></div><p class="hint">메뉴를 추가한 뒤 비용을 나눌 사람을 선택하세요.</p><form id="item-form"><div class="menu-fields"><label>메뉴명<input id="item-name" maxlength="50" placeholder="예: 함께 먹은 케이크" required></label><label>개당 가격 (원)<input id="item-price" type="number" min="1" max="1000000000" step="1" inputmode="numeric" placeholder="8,000" required></label><label>수량<input id="item-quantity" type="number" min="1" max="10000" step="1" inputmode="numeric" value="1" required></label></div><button class="add-menu" type="submit">＋ 메뉴 추가</button></form><div id="items"></div><p id="items-empty" class="empty">아직 추가한 메뉴가 없어요.<br><span>첫 메뉴를 추가하고 정산을 시작해 보세요.</span></p></section>
+</div><aside><section class="card result"><div class="eyebrow">OUR RECEIPT</div><h2>정산 결과</h2><div class="total"><span>총 결제 금액</span><strong id="total">0원</strong></div><div id="results"></div><p id="result-note" class="hint"></p><button id="copy" class="primary" disabled>정산 결과 복사하기</button><p class="footnote">나누어떨어지지 않는 금액은 등록 순서대로<br>1원씩 배분해 총액을 정확히 맞춰요.</p></section><button id="reset" class="reset">내역 모두 지우기</button></aside></div>
+<p id="status" role="status" aria-live="polite"></p><footer>함께한 시간은 즐겁게, 정산은 가볍게.</footer>
+</main><script type="module" src="app.js"></script></body></html>
